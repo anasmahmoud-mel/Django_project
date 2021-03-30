@@ -1,0 +1,40 @@
+{% extends 'hello/include/header.html' %}
+
+
+{% block content %}
+<!-- Custom file input start -->
+<div class="col-12">
+    <div class="card mt-5">
+        <div class="card-body">
+            <h4 class="header-title">Add Data</h4>
+            {# Error start here #}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}" role="alert">
+                <p style="color:#533f03; font-weight:bold" {% if message.tags %} class="" {% endif %}>{{ message }}</p>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" name="myfile" class="custom-file-input" id="inputGroupFile04">
+                        <label class="custom-file-label" for="inputGroupFile04"></label>
+                    </div>
+                    <br>
+                    <div class="input-group" style="margin-top: 20px">
+                        <button class="btn btn-success btn-block" type="submit">Add</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Custom file input end -->
+
+
+{% endblock %}
+
+
+

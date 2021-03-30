@@ -1,0 +1,60 @@
+{% extends 'hello/include/header.html' %}
+
+
+{% block content %}
+
+<!-- basic form start -->
+<div class="col-12 mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="header-title"> Add New Data</h4>
+            <form method="POST" class="post-form" action="/add">
+                {% csrf_token %}
+                {{ form }}
+                <div class="form-group">
+                    <label for="exampleInputName">Name</label>
+                    <input type="text" name="name" class="form-control" id="exampleInputEmail1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputAge">Age</label>
+                    <input type="text" name="age" class="form-control" id="exampleInputEmail1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputAge">Height</label>
+                    <input type="text" name="height" class="form-control" id="exampleInputEmail1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputCity">City</label>
+                    <input type="text" name="city" class="form-control" id="exampleInputEmail1">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputAverageEarning">Average Earning</label>
+                    <input type="text" name="average_earning" class="form-control" id="exampleInputEmail1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputClothesExpenses">Clothes Expenses</label>
+                    <input type="text" name="clothes_expenses" class="form-control" id="exampleInputEmail1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputCreamsExpenses">Creams Expenses</label>
+                    <input type="text" name="creams_expenses" class="form-control" id="exampleInputEmail1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputMakeupExpenses">Makeup Expenses</label>
+                    <input type="text" name="makeup_expenses" class="form-control" id="exampleInputEmail1">
+                </div>
+                <button type="submit" value="update" class="btn btn-primary mt-4 pr-4 pl-4">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- basic form end -->
+
+
+{% endblock %}

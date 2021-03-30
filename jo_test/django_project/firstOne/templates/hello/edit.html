@@ -1,0 +1,60 @@
+{% extends 'hello/include/header.html' %}
+
+
+{% block content %}
+  <div class="col-12 mt-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="header-title"> Project #9 - form</h4>
+                            <form method="POST" class="post-form" action="/update/{{ person.id }}">
+                                {% csrf_token %}
+                                {{ form }}
+                                 <div class="form-group">
+                                    <label for="exampleInputName">Name</label>
+                                    <input type="text" name="name" class="form-control" id="exampleInputEmail1" value="{{ person.name }}" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email"  name="email" class="form-control" id="exampleInputEmail1" value="{{ person.email }}" >
+                                </div>
+                                 <div class="form-group">
+                                    <label for="exampleInputAge">Age</label>
+                                    <input type="text" name="age" class="form-control" id="exampleInputEmail1" value="{{ person.age }}" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputAge">Height</label>
+                                    <input type="text" name="height" class="form-control" id="exampleInputEmail1" value="{{ person.age }}" >
+                                </div>
+                                 <div class="form-group">
+                                    <label for="exampleInputCity">City</label>
+                                    <input type="text" name="city" class="form-control" id="exampleInputEmail1" value="{{ person.city }}" >
+                                </div>
+
+                                 <div class="form-group">
+                                    <label for="exampleInputAverageEarning">Average Earning</label>
+                                    <input type="text" name="average_earning" class="form-control" id="exampleInputEmail1" value="{{ person.average_earning }}" >
+                                </div>
+                                 <div class="form-group">
+                                    <label for="exampleInputClothesExpenses">Clothes Expenses</label>
+                                    <input type="text" name="clothes_expenses" class="form-control" id="exampleInputEmail1" value="{{ person.cloths_expenses }}" >
+                                </div>
+                                 <div class="form-group">
+                                    <label for="exampleInputCreamsExpenses">Creams Expenses</label>
+                                    <input type="text" name="creams_expenses" class="form-control" id="exampleInputEmail1" value="{{ person.creams_expenses }}" >
+                                </div>
+                                 <div class="form-group">
+                                    <label for="exampleInputMakeupExpenses">Makeup Expenses</label>
+                                    <input type="text" name="makeup_expenses" class="form-control" id="exampleInputEmail1" value="{{ person.makeup_expenses }}" >
+                                </div>
+
+                                <button type="submit" value="update" class="btn btn-primary mt-4 pr-4 pl-4">Update</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- basic form end -->
+
+
+{% endblock %}
+
+
